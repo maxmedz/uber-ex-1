@@ -1,0 +1,14 @@
+---
+title: "Uber exercise"
+author: "MM"
+date: "`r Sys.Date()`"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Uber exericise
+
+Below is the exercise from StrataScratch easy section. Now I am just having fun working the MarkDown fancy file
