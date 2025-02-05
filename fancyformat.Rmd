@@ -1,0 +1,13 @@
+---
+title: "Uber easy exercise"
+author: "MM"
+date: "2025-02-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# My exercise step by step
+
