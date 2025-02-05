@@ -12,3 +12,28 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Uber exericise
 
 Below is the exercise from StrataScratch easy section. Now I am just having fun working the MarkDown fancy file
+
+## Downloading packages and reading the dataset:
+```{r, echo=TRUE,results = "hide",message=FALSE,warning=FALSE}
+library(tidyverse)
+library(dplyr)
+library(zoo)
+x<-read.csv('Data/dataset_1.csv')
+```
+## Throwing a look
+As we can see, weirdly  we have dates in a format as if we used the pivot table to create a dataset which will complicate our life later.
+```{r, eval=TRUE, echo=FALSE,message=FALSE,warning=FALSE}
+glimpse(x)
+head(x,30)
+```
+## Data cleaning
+Indeed, we will have to do some data cleaning to adjust the format such a way it is easier to work with the dates. We will need each observation have its own date.
+
+First, I will do it my own artisanal way using loops I learnt at school
+```{r, eval=TRUE, echo=TRUE,message=FALSE,warning=FALSE}
+for (i in 2:nrow(x)) {  
+  if (x$Date[i]=='') {  
+    x$Date[i] <- x$Date[i - 1]  
+  }
+}
+```
